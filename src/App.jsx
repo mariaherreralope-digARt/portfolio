@@ -15,7 +15,9 @@ import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import CookieConsentBanner from "./components/CookieConsentBanner";
 import PricingCards from "./components/PricingCards";
+import ProjectsiPhone from "./components/ProjectsiPhone";
 //  snap-y snap-mandatory
+
 function App() {
   return (
     <main
@@ -30,7 +32,8 @@ function App() {
       <ImageSlider/> */}
         {/* <EventCards/> */}
         <AboutMe />
-        <PricingCards/>
+        <ProjectsiPhone />
+        <PricingCards />
         {/* <StayOptions/> */}
         {/* <OptionsCards/>
       <CardsCollection/>

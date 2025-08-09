@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import heroImage from "../assets/hero-image1.png"; // Make sure this has transparent background
+import iPhoneMockUp from "../assets/iPhoneMockUp.png";
+import mobileSite from "../assets/mobileSite.png";
 
 const containerVariants = {
   hidden: {},
@@ -21,10 +22,10 @@ const slideInRight = {
   show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 
-const Hero = () => {
+const ProjectsiPhone = () => {
   return (
     <section
-      id="home"
+      id="projects"
       className="relative w-full md:h-screen flex  bg-gradient-to-b from-[#0c0c1d] to-[#111132] px-6 md:px-16 overflow-hidden "
     >
       {/* Gradient Overlay (optional) */}
@@ -44,14 +45,14 @@ const Hero = () => {
             className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}
           >
-            Maria Herrera
+            Full Responsive Websites
           </motion.h2>
 
           <motion.h1
             className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-slate-200 to-slate-600  bg-clip-text text-transparent cursor-default"
             variants={fadeUp}
           >
-            Front-End Developer <br />& UI Animator
+            Mobile
           </motion.h1>
 
           <motion.p
@@ -85,23 +86,39 @@ const Hero = () => {
               }, // delay start sliding after fade in
             },
           }}
-        >
-          ProJect Creator
-        </motion.div>
+        ></motion.div>
         {/* RIGHT COLUMN */}
         <motion.div
-          className="w-full md:w-1/2 mt-3 md:mt-3 flex justify-center md:justify-end pt-7 md:pt-0"
+          className=" w-full md:w-1/2 mt-3 md:mt-3 flex justify-center md:justify-end pt-7 md:pt-0  "
           variants={slideInRight}
         >
-          <img
-            src={heroImage}
-            alt="Maria Herrera"
-            className="w-[300px] md:w-[450px] object-contain drop-shadow-xl "
-          />
+          <div className="relative w-[300px] h-[600px] mx-auto overflow-hidden">
+            <img
+              src={iPhoneMockUp}
+              alt="Mobile Responsive"
+              className="absolute top-0 left-0 w-full  z-10 pointer-events-none"
+            />
+            <div
+              className="absolute top-[40px] left-[20px] w-[220px] h-[500px] overflow-y-scroll rounded-[28px] scrollbar-hide "
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, black 95%, transparent 100%)", // optional fade mask
+                maskImage:
+                  "linear-gradient(to bottom, black 95%, transparent 100%)",
+              }}
+            >
+              <img
+                src={mobileSite}
+                alt="Mobile site screenshot"
+                className="w-full relative mt-8 ml-8  object-cover"
+                style={{ display: "block" }}
+              />
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </section>
   );
 };
 
-export default Hero;
+export default ProjectsiPhone;

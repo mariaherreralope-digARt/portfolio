@@ -30,8 +30,8 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        className="top-0 right-0 left-0 
-        bg-gradient-to-br from-[#0c0c1d] to-[#111132]  z-10"
+        className="top-0 right-0 left-0 bg-gradient-to-b
+        from-[#111132] to-[#0c0c1d]  z-10"
       >
         <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10 md:h-18 h-24">
           {/* Logo */}

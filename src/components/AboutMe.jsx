@@ -18,22 +18,25 @@ const fadeInUp = {
 
 const AboutSection = () => {
   return (
-    <section className=" flex flex-col justify-center items-center px-6 py-20 bg-gradient-to-br from-[#0c0c1d] to-[#111132] text-center ">
+    <section className=" md:h-screen flex flex-col justify-center items-center px-6 py-20 bg-gradient-to-t from-[#0c0c1d] to-[#111132] text-center ">
       {/* Gradient Overlay (optional) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 z-0 pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 z-0 pointer-events-none" /> */}
       <motion.h1
-        className="text-4xl md:text-5xl font-bold text-gray-200"
+        className="text-4xl md:text-5xl font-bold "
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         custom={0}
       >
-        Hi! I’m María,
+        👋{" "}
+        <span className="bg-gradient-to-r from-slate-600 to-slate-200  bg-clip-text text-transparent tracking-tight cursor-default">
+          Hi! I’m María,
+        </span>
       </motion.h1>
 
       <motion.h2
-        className="text-xl md:text-2xl text-white mt-4 max-w-3xl"
+        className="text-xl md:text-2xl text-white mt-4 max-w-3xl cursor-default"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -45,7 +48,7 @@ const AboutSection = () => {
       </motion.h2>
 
       <motion.p
-        className="mt-8 text-white max-w-2xl"
+        className="mt-8 text-white max-w-2xl cursor-default"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -60,7 +63,7 @@ const AboutSection = () => {
       </motion.p>
 
       <motion.p
-        className="mt-4 text-white max-w-2xl"
+        className="mt-4 text-white max-w-2xl cursor-default"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
@@ -74,7 +77,7 @@ const AboutSection = () => {
       </motion.p>
 
       <motion.p
-        className="mt-4 text-white max-w-2xl"
+        className="mt-4 text-white max-w-2xl cursor-default"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
