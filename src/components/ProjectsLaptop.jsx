@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import heroImage from "../assets/hero-image1.png"; // Make sure this has transparent background
+import laptopMockUp from "../assets/laptopMockUp.png";
+import laptopSite from "../assets/laptopSite.png";
 
 const containerVariants = {
   hidden: {},
@@ -13,18 +14,18 @@ const containerVariants = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
 };
 
 const slideInRight = {
-  hidden: { opacity: 0, x: 80 },
+  hidden: { opacity: 0, x: -80 },
   show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 
-const Hero = () => {
+const ProjectsLaptop = () => {
   return (
     <section
-      id="home"
+      id="projects"
       className="relative w-full md:h-screen flex  bg-gradient-to-b from-[#0c0c1d] to-[#111132] px-6 md:px-16 overflow-hidden "
     >
       {/* Content Wrapper */}
@@ -35,27 +36,55 @@ const Hero = () => {
         whileInView="show"
       >
         {/* LEFT COLUMN */}
+        <motion.div
+          className=" w-full md:w-1/2 flex justify-center  pt-7 md:pt-72  "
+          variants={slideInRight}
+        >
+          <div className="relative w-[500px] h-[600px] mx-auto overflow-hidden">
+            <img src={laptopMockUp} alt="Animated Sites" className=" z-10 " />
+            <div
+              className="absolute top-[20px] left-[124px] w-[245px] md:h-[155px] h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide"
+              // style={{
+              //   WebkitMaskImage:
+              //     "linear-gradient(to bottom, black 95%, transparent 100%)", // optional fade mask
+              //   maskImage:
+              //     "linear-gradient(to bottom, black 95%, transparent 100%)",
+              // }}
+            >
+              <img
+                src={laptopSite}
+                alt="Mobile site screenshot"
+                className="-pr-4 bg-slate-400
+                 relative  object-cover"
+                style={{ display: "block" }}
+              />
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN */}
+        </motion.div>
         <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-10">
           <motion.h2
             className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}
           >
-            Maria Herrera
+            Modern Animated Websites
           </motion.h2>
 
           <motion.h1
             className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-slate-200 to-slate-600  bg-clip-text text-transparent cursor-default"
             variants={fadeUp}
           >
-            Front-End Developer <br />& UI Animator
+            Desktop View
           </motion.h1>
 
           <motion.p
-            className="text-yellow-400 text-base md:text-lg cursor-default"
+            className="text-yellow-300 text-base md:text-lg cursor-default"
             variants={fadeUp}
           >
-            I create modern, animated, and fully responsive websites using React
-            & Framer Motion.
+            Websites designed for a full desktop experience, featuring smooth
+            animations, thoughtful layouts, and an engaging user interface.
+            Built with React & Framer Motion for performance and style.
           </motion.p>
 
           <motion.button
@@ -81,23 +110,10 @@ const Hero = () => {
               }, // delay start sliding after fade in
             },
           }}
-        >
-          ProJect Creator
-        </motion.div>
-        {/* RIGHT COLUMN */}
-        <motion.div
-          className="w-full md:w-1/2 mt-3 md:mt-3 flex justify-center md:justify-end pt-7 md:pt-0"
-          variants={slideInRight}
-        >
-          <img
-            src={heroImage}
-            alt="Maria Herrera"
-            className="w-[300px] md:w-[450px] object-contain drop-shadow-xl "
-          />
-        </motion.div>
+        ></motion.div>
       </motion.div>
     </section>
   );
 };
 
-export default Hero;
+export default ProjectsLaptop;

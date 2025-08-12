@@ -26,7 +26,7 @@ const AboutSection = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{}}
         custom={0}
       >
         👋{" "}
@@ -40,7 +40,7 @@ const AboutSection = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{}}
         custom={1}
       >
         a passionate front-end developer who loves turning ideas into smooth,
@@ -52,14 +52,14 @@ const AboutSection = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{}}
         custom={2}
       >
         I specialize in building responsive, fast-loading, and beautifully
         animated interfaces using React, Tailwind CSS, and Framer Motion. My
         goal is to help small businesses, creatives, and entrepreneurs stand out
-        online with websites that not only look great — but work perfectly on
-        any device.
+        online with websites that not only look great, but also work flawlessly
+        on any device.
       </motion.p>
 
       <motion.p
@@ -67,13 +67,13 @@ const AboutSection = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{}}
         custom={3}
       >
         I recently completed a front-end developer program and now focus on
-        creating clean code, eye-catching layouts, and engaging user
-        experiences. I’m always learning and improving, and I enjoy solving
-        challenges with curiosity and creativity.
+        writing clean code, crafting eye-catching layouts, and designing
+        engaging user experiences. I’m constantly learning and improving, and I
+        enjoy solving challenges with curiosity and creativity.
       </motion.p>
 
       <motion.p
@@ -81,11 +81,11 @@ const AboutSection = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{}}
         custom={4}
       >
         When I’m not coding, you’ll find me exploring design trends, watching
-        dev tutorials, or dreaming up my next side project. Let’s build
+        development tutorials, or dreaming up my next side project. Let’s build
         something great together!
       </motion.p>
 
@@ -95,7 +95,7 @@ const AboutSection = () => {
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{}}
         custom={5}
       >
         <motion.div

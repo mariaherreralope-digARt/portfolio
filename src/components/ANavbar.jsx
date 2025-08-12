@@ -18,10 +18,10 @@ const Navbar = () => {
   });
 
   const navLinks = [
-    { href: "#nuestrahistoria", label: "About Me" },
-    { href: "#eventos", label: "Projects" },
-    { href: "#comoayudar", label: "Services" },
-    { href: "#testimonios", label: "Testimonials" },
+    { href: "#about", label: "About Me" },
+    { href: "#projects", label: "Projects" },
+    { href: "#services", label: "Services" },
+    { href: "#testimonials", label: "Testimonials" },
   ];
 
   const openContactForm = () => setContactFormOpen(true);
@@ -37,13 +37,13 @@ const Navbar = () => {
           {/* Logo */}
 
           <a
-            href="#inicio"
-            onClick={() => setActiveLink("#inicio")}
+            href="#home"
+            onClick={() => setActiveLink("#home")}
             className="flex items-center"
           >
             <motion.img
               initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 2.8, delay: 0.5 }}
               src={logo}
               alt="digARt Maria Herrera"
@@ -109,15 +109,15 @@ const Navbar = () => {
           <motion.button
             onClick={openContactForm}
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{
-              delay: 1.5,
+              delay: 0.5,
               duration: 0.8,
               type: "spring",
               stiffness: 100,
               damping: 10,
             }}
-            className="hidden md:block bg-yellow-500 text-sm text-white px-6 py-2.5 rounded-full hover:bg-yellow-600 font-semibold uppercase transition-all hover:shadow-sm hover:shadow-yellow-600 z-20"
+            className="hidden md:block bg-yellow-500 text-sm text-white px-6 py-2.5 rounded-3xl hover:bg-yellow-400 font-semibold uppercase transition-all hover:shadow-sm hover:shadow-yellow-600 z-20"
           >
             CONTACTA
           </motion.button>
@@ -145,7 +145,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.5 }}
-              className="md:hidden bg-gray-300 border-t border-gray-100 py-4"
+              className="md:hidden bg-gray-300 border-t border-gray-100 py-4 text-center"
             >
               <div className="container mx-auto px-20 space-y-3">
                 {navLinks.map((link, index) => (
@@ -157,7 +157,7 @@ const Navbar = () => {
                     }}
                     className={`block text-sm font-medium py-2 ${
                       activeLink === link.href
-                        ? "text-yellow-600"
+                        ? "text-yellow-500"
                         : "text-gray-600 hover:text-gray-900"
                     }`}
                     href={link.href}
@@ -171,9 +171,9 @@ const Navbar = () => {
                     setIsMenuOpen(false);
                     openContactForm();
                   }}
-                  className="w-full bg-yellow-600 text-white px-6 py-2.5 rounded-lg hover:bg-yellow-700 font-medium transition-all hover:shadow-lg hover:shadow-yellow-100"
+                  className="w-full bg-yellow-500 text-white px-2 py-2.5 rounded-3xl hover:bg-yellow-400 font-semibold transition-all hover:shadow-sm hover:shadow-yellow-600"
                 >
-                  Contactanos
+                  Let's Work Together
                 </button>
               </div>
             </motion.div>
@@ -205,7 +205,7 @@ const Navbar = () => {
             >
               <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold text-gray-600 dark:text-gray-100">
-                  Contacta con Nosotros
+                  Let's Work Together
                 </h1>
                 <button
                   onClick={closeContactForm}
@@ -226,7 +226,7 @@ const Navbar = () => {
                 <input
                   type="hidden"
                   name="_autoresponse"
-                  value="Gracias por tu mensaje. Nos pondremos en contacto pronto."
+                  value="Thanks for your message. I'll get back to you soon."
                 />
 
                 <div>
@@ -234,13 +234,13 @@ const Navbar = () => {
                     htmlFor="name"
                     className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-1"
                   >
-                    Nombre
+                    Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    placeholder="Tu Nombre"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-yellow-500 focus:border-yellow-400 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                   />
                 </div>
                 <div>
@@ -248,13 +248,13 @@ const Navbar = () => {
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-1"
                   >
-                    Correo Electrónico
+                    Email
                   </label>
                   <input
                     type="email"
                     id="email"
-                    placeholder="Tu Correo Electrónico"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-yellow-500 focus:border-yellow-400 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                   />
                 </div>
                 <div>
@@ -262,17 +262,17 @@ const Navbar = () => {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-800 dark:text-gray-100 mb-1"
                   >
-                    Mensaje
+                    Message
                   </label>
                   <textarea
                     rows={4}
                     id="message"
-                    placeholder="¿Cómo podemos ayudarte?"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                    placeholder="How can we help you?"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-yellow-500 focus:border-yellow-400 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                   />
                 </div>
-                <motion.button className="w-full px-4 py-2 text-white bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 rounded-lg shadow-sm hover:shadow-md hover:shadow-yellow-500/50">
-                  Enviar Mensaje
+                <motion.button className="w-full px-4 py-2 text-white bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 rounded-3xl shadow-sm hover:shadow-sm hover:shadow-yellow-400">
+                  Send Message
                 </motion.button>
               </form>
             </motion.div>

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -10,8 +9,17 @@ html {
 
 /* customize container here using tailwindcss */
 .section-container {
-  @apply  px-4 sm:px-6 lg:px-8 py-16 container mx-auto;
+  @apply px-4 sm:px-6 lg:px-8 py-16 container mx-auto;
 }
 body {
   @apply font-nunito;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
