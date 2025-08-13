@@ -1,51 +1,49 @@
-import "./App.css";
-import ANavbar from "./components/ANavbar";
-import Hero from "./components/Hero";
-import AboutMe from "./components/AboutMe";
-import IconSlideAnimation from "./components/IconSlideAnimation";
-// import StayOptions from './components/StayOptions'
-import OptionsCards from "./components/OptionsCards";
-import CardsCollection from "./components/CardsCollection";
-import ImageSlider from "./components/ImageSlider";
-// import JoinCommunity from './components/JoinCommunity'
-import EventCards from "./components/EventCards";
-// import PricingSection from './components/PricingSection'
-import Newsletter from "./components/Newsletter";
-import Footer from "./components/Footer";
-import Testimonials from "./components/Testimonials";
-import CookieConsentBanner from "./components/CookieConsentBanner";
-import PricingCards from "./components/PricingCards";
-import ProjectsiPhone from "./components/ProjectsiPhone";
-import ProjectsLaptop from "./components/ProjectsLaptop";
-//  snap-y snap-mandatory
+// import { useState } from "react";
+// import AppEn from "./AppEn";
+// import AppEs from "./AppEs";
 
-function App() {
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+
+import AppEn from "./AppEn";
+import AppEs from "./AppEs";
+
+const App = () => {
+  // State to manage current language
+  const [language, setLanguage] = useState("en"); // default: English
+
+  // Function to switch language
+  const switchLanguage = (lang) => {
+    setLanguage(lang);
+  };
+
   return (
-    <main
-      className="relative h-screen overflow-y-scroll
-     scroll-smooth "
-    >
-      <div className="absolute -top-28 -left-28 w-[500px] h-[500px] bg-gradient-to-tr from-red-800/20 to-yellow-600/20 rounded-full blur-[80px] -z-10"></div>
-      <div>
-        <ANavbar />
-        <Hero />
-        {/* <IconSlideAnimation/>
-      <ImageSlider/> */}
-        {/* <EventCards/> */}
-        <AboutMe />
-        <ProjectsLaptop />
-        <ProjectsiPhone />
-        <PricingCards />
-        {/* <StayOptions/> */}
-        {/* <OptionsCards/>
-      <CardsCollection/>*/}
-        <Testimonials/>
-        <Newsletter/>
-        <Footer/> 
-        <CookieConsentBanner />
-      </div>
-    </main>
+    <div className="App">
+      {/* Navbar receives language state and switch function */}
+      <Navbar switchLanguage={switchLanguage} currentLanguage={language} />
+
+      {/* Render language-specific app content */}
+      {language === "en" ? <AppEn /> : <AppEs />}
+    </div>
   );
-}
+};
 
 export default App;
+
+// import { useState } from "react";
+// import AppEn from "./AppEn";
+// import AppEs from "./AppEs";
+
+// function App() {
+//   const [language, setLanguage] = useState("en");
+
+//   return (
+//     <>
+//       <button onClick={() => setLanguage("en")}>EN</button>
+//       <button onClick={() => setLanguage("es")}>ES</button>
+//       {language === "es" ? <AppEs /> : <AppEn />}
+//     </>
+//   );
+// }
+
+// export default App;

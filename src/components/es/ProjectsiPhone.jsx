@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import iPhoneMockUp from "../assets/iPhoneMockUp.png";
-import mobileSite from "../assets/mobileSite.png";
+import iPhoneMockUp from "/src/assets/iPhoneMockUp.png";
+import mobileSite from "/src/assets/mobileSite.png";
 
 const containerVariants = {
   hidden: {},
@@ -45,30 +45,31 @@ const ProjectsiPhone = () => {
             className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}
           >
-            Full Responsive Websites
+            Sitios web totalmente adaptables
           </motion.h2>
 
           <motion.h1
             className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-slate-200 to-slate-600  bg-clip-text text-transparent cursor-default"
             variants={fadeUp}
           >
-            Mobile View
+            Versión móvil
           </motion.h1>
 
           <motion.p
             className="text-yellow-300 text-base md:text-lg cursor-default"
             variants={fadeUp}
           >
-            Websites that adapt perfectly to any mobile device, with
-            fast-loading content, intuitive navigation, and clean animations for
-            an excellent on-the-go experience. Built with React & Framer Motion.
+            Páginas que se ajustan a la perfección a cualquier dispositivo
+            móvil, con carga rápida, navegación intuitiva y animaciones limpias
+            para una experiencia excelente en movimiento. Desarrolladas con
+            React y Framer Motion.
           </motion.p>
 
           <motion.button
             className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-3xl transition-all duration-300 shadow hover:shadow-lg"
             variants={fadeUp}
           >
-            Let’s Work Together
+            Trabajemos juntos
           </motion.button>
         </div>
         <motion.div

@@ -20,10 +20,15 @@ const CookieConsentBanner = () => {
   return (
     <div className="fixed bottom-0 w-full bg-gray-900 text-white px-4 py-3 text-sm flex justify-between items-center z-50">
       <p>
-        Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra{" "}
-        <a href="/politica-de-privacidad" className="underline hover:text-yellow-400">
+        Usamos cookies para mejorar tu experiencia. Al continuar, aceptas
+        nuestra{" "}
+        <a
+          href="/politica-de-privacidad"
+          className="underline hover:text-yellow-400"
+        >
           Política de Privacidad
-        </a>.
+        </a>
+        .
       </p>
       <button
         onClick={handleAccept}

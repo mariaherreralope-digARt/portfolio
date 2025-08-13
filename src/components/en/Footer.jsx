@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import logo from "../assets/logo.png"; // Replace with your portfolio logo
+import logo from "/src/assets/logo.png"; // Replace with your portfolio logo
 
 const footerLinks = {
   Portfolio: [

@@ -5,11 +5,11 @@ import "swiper/css/navigation";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
-import testimonial1 from "../assets/testimonial1.png";
-import testimonial2 from "../assets/testimonial2.png";
-import testimonial3 from "../assets/testimonial3.png";
-import testimonial4 from "../assets/testimonial4.png";
-import testimonial5 from "../assets/testimonial5.png";
+import testimonial1 from "/src/assets/testimonial1.png";
+import testimonial2 from "/src/assets/testimonial2.png";
+import testimonial3 from "/src/assets/testimonial3.png";
+import testimonial4 from "/src/assets/testimonial4.png";
+import testimonial5 from "/src/assets/testimonial5.png";
 
 const testimonials = [
   {

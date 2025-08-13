@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "../assets/hero-image1.png"; // Make sure this has transparent background
+import heroImage from "/src/assets/hero-image1.png"; // Make sure this has transparent background
 
 const containerVariants = {
   hidden: {},
@@ -47,22 +47,22 @@ const Hero = () => {
             className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-slate-200 to-slate-600  bg-clip-text text-transparent cursor-default"
             variants={fadeUp}
           >
-            Front-End Developer <br />& UI Animator
+            Desarrolladora Front-End <br />y Animadora UI.
           </motion.h1>
 
           <motion.p
             className="text-yellow-400 text-base md:text-lg cursor-default"
             variants={fadeUp}
           >
-            I create modern, animated, and fully responsive websites using React
-            & Framer Motion.
+            Creo sitios web modernos, animados y totalmente adaptables con React
+            y Framer Motion.
           </motion.p>
 
           <motion.button
             className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-3xl transition-all duration-300 shadow hover:shadow-lg"
             variants={fadeUp}
           >
-            Let’s Work Together
+            Trabajemos juntos
           </motion.button>
         </div>
         <motion.div
@@ -82,7 +82,7 @@ const Hero = () => {
             },
           }}
         >
-          ProJect Creator
+          Creadora de ProJectos
         </motion.div>
         {/* RIGHT COLUMN */}
         <motion.div
