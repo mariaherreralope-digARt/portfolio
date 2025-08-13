@@ -49,7 +49,7 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
             transition={{ duration: 2.8, delay: 0.5 }}
             src={logo}
             alt="digARt Maria Herrera"
-            className="h-40 px-10 relative z-10 "
+            className="h-40 md:px-10 px-4relative z-10 "
           />
         </a>
 
@@ -98,7 +98,7 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
         </motion.div>
 
         {/* Languages */}
-        <div className="md:flex hidden items-center text-emerald-500 pr-8 text-sm gap-3">
+        <div className="flex items-center text-emerald-500 pr-8 text-sm gap-3">
           <button
             onClick={() => switchLanguage("en")}
             className={
@@ -166,7 +166,7 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
               ))}
 
               {/* Mobile Languages */}
-              <div className="flex justify-center gap-4 mt-2">
+              {/* <div className="flex justify-center gap-4 mt-2">
                 <button
                   onClick={() => {
                     switchLanguage("en");
@@ -193,7 +193,7 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
                 >
                   ES
                 </button>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         )}
