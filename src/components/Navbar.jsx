@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "/src/assets/fabrica-logo1.png";
+import logo from "/src/assets/digARt-logo.png";
+import ContactFormModalEN from "./en/ContactFormModal";
+import ContactFormModalES from "./es/ContactFormModal";
 
 const Navbar = ({ switchLanguage, currentLanguage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,13 +33,14 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
     },
   ];
 
-  // Create an array of refs for nav links
   const navRefs = useRef(navLinks.map(() => null));
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <motion.nav className="top-0 right-0 left-0 bg-gradient-to-b from-[#111132] to-[#0c0c1d] z-10">
       <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10 md:h-18 h-24">
         {/* Logo */}
+        <div className="flex-shrink-0"></div>
         <a
           href="#home"
           onClick={() => setActiveLink("#home")}
@@ -49,7 +52,7 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
             transition={{ duration: 2.8, delay: 0.5 }}
             src={logo}
             alt="digARt Maria Herrera"
-            className="h-40 md:px-10 px-4relative z-10 "
+            className="h-32 md:px-10 px-4 relative z-10 "
           />
         </a>
 
@@ -144,9 +147,9 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="md:hidden bg-gray-300 border-t border-gray-100 py-4 text-center"
+            className="md:hidden bg-gradient-to-b from-slate-300/60 to-slate-300/30 border border-gray-100 py-4  text-center"
           >
-            <div className="container mx-auto px-20 space-y-3">
+            <div className="container mx-auto px-20  space-y-3">
               {navLinks.map((link, index) => (
                 <a
                   key={index}
@@ -157,46 +160,40 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
                   className={`block text-sm font-medium py-2 ${
                     activeLink === link.href
                       ? "text-yellow-500"
-                      : "text-gray-600 hover:text-gray-900"
+                      : "text-slate-100 hover:text-gray-900"
                   }`}
                   href={link.href}
                 >
                   {link.label}
                 </a>
               ))}
-
-              {/* Mobile Languages */}
-              {/* <div className="flex justify-center gap-4 mt-2">
-                <button
-                  onClick={() => {
-                    switchLanguage("en");
-                    setIsMenuOpen(false);
-                  }}
-                  className={
-                    currentLanguage === "en"
-                      ? "font-bold text-yellow-400"
-                      : "font-light"
-                  }
-                >
-                  EN
-                </button>
-                <button
-                  onClick={() => {
-                    switchLanguage("es");
-                    setIsMenuOpen(false);
-                  }}
-                  className={
-                    currentLanguage === "es"
-                      ? "font-bold text-yellow-400"
-                      : "font-light"
-                  }
-                >
-                  ES
-                </button>
-              </div> */}
+              {/* Mobile Contact Button */}
+              <button
+                onClick={() => {
+                  setIsContactOpen(true);
+                  setIsMenuOpen(false);
+                }}
+                className="w-full bg-yellow-500 text-white px-2 py-2.5 rounded-xl hover:bg-yellow-400 transition-all hover:shadow-sm hover:shadow-yellow-600"
+              >
+                Contact
+              </button>
             </div>
           </motion.div>
         )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isContactOpen &&
+          (currentLanguage === "en" ? (
+            <ContactFormModalEN
+              isOpen={isContactOpen}
+              onClose={() => setIsContactOpen(false)}
+            />
+          ) : (
+            <ContactFormModalES
+              isOpen={isContactOpen}
+              onClose={() => setIsContactOpen(false)}
+            />
+          ))}
       </AnimatePresence>
     </motion.nav>
   );
