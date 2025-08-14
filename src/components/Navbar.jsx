@@ -40,11 +40,11 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
     <motion.nav className="top-0 right-0 left-0 bg-gradient-to-b from-[#111132] to-[#0c0c1d] z-10">
       <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10 md:h-18 h-24">
         {/* Logo */}
-        <div className="flex-shrink-0"></div>
+        <div className="flex-shrink-0 px-8">
         <a
           href="#home"
           onClick={() => setActiveLink("#home")}
-          className="flex items-center"
+          className="flex items-center "
         >
           <motion.img
             initial={{ opacity: 0, x: -50 }}
@@ -52,10 +52,10 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
             transition={{ duration: 2.8, delay: 0.5 }}
             src={logo}
             alt="digARt Maria Herrera"
-            className="h-32 md:px-10 px-4 relative z-10 "
+            className="h-32  relative z-10 "
           />
         </a>
-
+</div>
         {/* Desktop nav links */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}

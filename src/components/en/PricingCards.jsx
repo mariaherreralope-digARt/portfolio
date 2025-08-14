@@ -67,7 +67,7 @@ const pricingPlans = [
 
 const PricingCards = () => {
   return (
-    <div
+    <div id="services"
       className=" mx-auto max-w-7xl
     pt-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0c0c1d] to-[#111132]"
     >

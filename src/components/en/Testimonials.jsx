@@ -48,7 +48,7 @@ const testimonials = [
 const TestimonialsSection = () => {
   return (
     <section
-      id="testimonios"
+      id="testimonials"
       className="py-16 px-4 max-w-7xl mx-auto bg-gradient-to-b from-[#0c0c1d] to-[#111132] "
     >
       <motion.div className="text-center mb-12">

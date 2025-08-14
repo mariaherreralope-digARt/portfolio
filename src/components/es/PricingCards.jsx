@@ -68,7 +68,7 @@ const pricingPlans = [
 
 const PricingCards = () => {
   return (
-    <div className="mx-auto max-w-7xl pt-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0c0c1d] to-[#111132]">
+    <div id="services" className="mx-auto max-w-7xl pt-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0c0c1d] to-[#111132]">
       <h2 className="text-md font-extrabold text-slate-100 sm:text-xl sm:leading-tight sm:tracking-tight text-center">
         Paquetes de Sitios Web Flexibles — Diseñados para Tu Negocio, a Tu
         Manera
