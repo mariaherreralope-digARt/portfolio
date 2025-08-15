@@ -1,37 +1,34 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import laptopMockUp from "/src/assets/laptopMockUp.png";
+import laptopMockup from "/src/assets/laptopMockup.png";
 import laptopSite from "/src/assets/laptopSite.png";
 import ContactModal from "./ContactFormModal";
 
-
 const ProjectsLaptop = () => {
-
-const [contactFormOpen, setContactFormOpen] = useState(false);
+  const [contactFormOpen, setContactFormOpen] = useState(false);
 
   const openContactForm = () => setContactFormOpen(true);
   const closeContactForm = () => setContactFormOpen(false);
 
   const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
     },
-  },
-};
+  };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
-};
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
+  };
 
-const slideInRight = {
-  hidden: { opacity: 0, x: -80 },
-  show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
-};
-
+  const slideInRight = {
+    hidden: { opacity: 0, x: -80 },
+    show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
+  };
 
   return (
     <section
@@ -51,11 +48,8 @@ const slideInRight = {
           variants={slideInRight}
         >
           <div className="relative w-[500px] h-[600px] mx-auto overflow-hidden">
-            <img src={laptopMockUp} alt="Animated Sites" className=" z-10 " />
-            <div
-              className="absolute top-[20px] left-[124px] w-[245px] md:h-[155px] h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide"
-
-            >
+            <img src={laptopMockup} alt="Animated Sites" className=" z-10 " />
+            <div className="absolute top-[20px] left-[124px] w-[245px] md:h-[155px] h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide">
               <img
                 src={laptopSite}
                 alt="Mobile site screenshot"
@@ -119,7 +113,7 @@ const slideInRight = {
           }}
         ></motion.div>
       </motion.div>
-             {/* Render modal when open */}
+      {/* Render modal when open */}
       <ContactModal isOpen={contactFormOpen} onClose={closeContactForm} />
     </section>
   );
