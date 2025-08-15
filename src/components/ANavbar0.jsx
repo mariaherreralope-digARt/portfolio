@@ -90,7 +90,7 @@ const Navbar = () => {
                 </a>
               );
             })}
-            {/* Sliding Cursor */}
+            {/* Sliding Cursor working*/}
 
             <motion.div
               animate={{
@@ -233,6 +233,7 @@ const Navbar = () => {
                 <h1 className="text-2xl font-bold text-gray-600 dark:text-gray-100">
                   Let's Work Together
                 </h1>
+
                 <button
                   onClick={closeContactForm}
                   aria-label="Close contact form"

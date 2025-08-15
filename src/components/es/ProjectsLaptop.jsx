@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import laptopMockUp from "/src/assets/laptopMockUp.png";
 import laptopSite from "/src/assets/laptopSite.png";
+import ContactModal from "./ContactFormModal";
 
-const containerVariants = {
+
+const ProjectsLaptop = () => {
+
+const [contactFormOpen, setContactFormOpen] = useState(false);
+
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
+
+  const containerVariants = {
   hidden: {},
   show: {
     transition: {
@@ -22,7 +32,7 @@ const slideInRight = {
   show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 
-const ProjectsLaptop = () => {
+
   return (
     <section
       id="projects"
@@ -44,12 +54,7 @@ const ProjectsLaptop = () => {
             <img src={laptopMockUp} alt="Animated Sites" className=" z-10 " />
             <div
               className="absolute top-[20px] left-[124px] w-[245px] md:h-[155px] h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide"
-              // style={{
-              //   WebkitMaskImage:
-              //     "linear-gradient(to bottom, black 95%, transparent 100%)", // optional fade mask
-              //   maskImage:
-              //     "linear-gradient(to bottom, black 95%, transparent 100%)",
-              // }}
+
             >
               <img
                 src={laptopSite}
@@ -89,6 +94,7 @@ const ProjectsLaptop = () => {
           </motion.p>
 
           <motion.button
+            onClick={openContactForm}
             className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-3xl transition-all duration-300 shadow hover:shadow-lg"
             variants={fadeUp}
           >
@@ -113,6 +119,8 @@ const ProjectsLaptop = () => {
           }}
         ></motion.div>
       </motion.div>
+             {/* Render modal when open */}
+      <ContactModal isOpen={contactFormOpen} onClose={closeContactForm} />
     </section>
   );
 };

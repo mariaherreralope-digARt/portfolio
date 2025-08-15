@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, use } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "/src/assets/digARt-logo.png";
@@ -41,21 +41,21 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
       <div className="w-full mx-auto flex items-center justify-between px-4 sm:px-8 lg:px-10 md:h-18 h-24">
         {/* Logo */}
         <div className="flex-shrink-0 px-8">
-        <a
-          href="#home"
-          onClick={() => setActiveLink("#home")}
-          className="flex items-center "
-        >
-          <motion.img
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 2.8, delay: 0.5 }}
-            src={logo}
-            alt="digARt Maria Herrera"
-            className="h-32  relative z-10 "
-          />
-        </a>
-</div>
+          <a
+            href="#home"
+            onClick={() => setActiveLink("#home")}
+            className="flex items-center border-0 outline-none"
+          >
+            <motion.img
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2.8, delay: 0.5 }}
+              src={logo}
+              alt="digARt Maria Herrera"
+              className="h-32  relative z-10 "
+            />
+          </a>
+        </div>
         {/* Desktop nav links */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -66,27 +66,31 @@ const Navbar = ({ switchLanguage, currentLanguage }) => {
           }
           className="hidden md:flex relative w-fit rounded-3xl border-2 border-emerald-500 bg-transparent gap-3 z-20"
         >
-          {navLinks.map((link, index) => (
-            <a
-              key={index}
-              ref={(el) => (navRefs.current[index] = el)}
-              href={link.href}
-              onClick={() => setActiveLink(link.href)}
-              onMouseEnter={() => {
-                const ref = navRefs.current[index];
-                if (!ref) return;
-                const { width } = ref.getBoundingClientRect();
-                setCursorPosition({
-                  left: ref.offsetLeft,
-                  width,
-                  opacity: 1,
-                });
-              }}
-              className="relative z-20 block cursor-pointer uppercase text-emerald-500 mix-blend-difference px-3 py-1.5 md:px-5 md:py-3 font-light text-xs"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link, index) => {
+            const ref = useRef(null);
+
+            return (
+              <a
+                key={index}
+                ref={ref}
+                href={link.href}
+                onClick={() => setActiveLink(link.href)}
+                onMouseEnter={() => {
+                  if (!ref.current) return;
+                  const { width } = ref.current.getBoundingClientRect();
+
+                  setCursorPosition({
+                    left: ref.current.offsetLeft,
+                    width,
+                    opacity: 1,
+                  });
+                }}
+                className="relative z-20 block cursor-pointer uppercase text-emerald-500 mix-blend-difference px-3 py-1.5 md:px-5 md:py-3 font-light text-xs"
+              >
+                {link.label}
+              </a>
+            );
+          })}
 
           {/* Sliding Cursor */}
           <motion.div

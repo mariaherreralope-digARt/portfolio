@@ -1,5 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import heroImage from "/src/assets/hero-image1.png"; // Make sure this has transparent background
+import heroImage from "/src/assets/hero-image1.png"; 
+import ContactModal from "./ContactFormModal";
+
+const Hero = () => {
+
+    const [contactFormOpen, setContactFormOpen] = useState(false);
+
+    const openContactForm = () => setContactFormOpen(true);
+    const closeContactForm = () => setContactFormOpen(false);
 
 const containerVariants = {
   hidden: {},
@@ -21,7 +30,7 @@ const slideInRight = {
   show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 
-const Hero = () => {
+
   return (
     <section
       id="home"
@@ -59,6 +68,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.button
+            onClick={openContactForm}
             className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-3xl transition-all duration-300 shadow hover:shadow-lg"
             variants={fadeUp}
           >
@@ -96,6 +106,9 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
+      
+             {/* Render modal when open */}
+      <ContactModal isOpen={contactFormOpen} onClose={closeContactForm} />
     </section>
   );
 };

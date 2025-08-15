@@ -1,5 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import heroImage from "/src/assets/hero-image1.png"; // Make sure this has transparent background
+import heroImage from "/src/assets/hero-image1.png"; 
+import ContactModal from "./ContactFormModal";
+
+const Hero = () => {
+
+  const [contactFormOpen, setContactFormOpen] = useState(false);
+
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
 
 const containerVariants = {
   hidden: {},
@@ -21,13 +30,13 @@ const slideInRight = {
   show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 
-const Hero = () => {
+
   return (
     <section
       id="home"
       className="relative w-full md:h-screen flex  bg-gradient-to-b from-[#0c0c1d] to-[#111132] px-6 md:px-16 overflow-hidden "
     >
-      {/* Content Wrapper */}
+ 
       <motion.div
         className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 relative"
         variants={containerVariants}
@@ -35,7 +44,7 @@ const Hero = () => {
         whileInView="show"
       >
         {/* LEFT COLUMN */}
-        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-10">
+        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-5">
           <motion.h2
             className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}
@@ -44,7 +53,7 @@ const Hero = () => {
           </motion.h2>
 
           <motion.h1
-            className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-slate-200 to-slate-600  bg-clip-text text-transparent cursor-default"
+            className="text-3xl md:text-5xl font-extrabold leading-tight bg-gradient-to-r from-slate-200 to-slate-600  bg-clip-text text-transparent cursor-default"
             variants={fadeUp}
           >
             Desarrolladora Front-End <br />y Animadora UI.
@@ -59,6 +68,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.button
+            onClick={openContactForm}
             className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-3xl transition-all duration-300 shadow hover:shadow-lg"
             variants={fadeUp}
           >
@@ -96,6 +106,10 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
+
+       {/* Render modal when open */}
+<ContactModal isOpen={contactFormOpen} onClose={closeContactForm} />
+
     </section>
   );
 };
