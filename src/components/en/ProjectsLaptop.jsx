@@ -44,24 +44,16 @@ const ProjectsLaptop = () => {
       >
         {/* LEFT COLUMN */}
         <motion.div
-          className=" w-full md:w-1/2 flex justify-center  pt-7 md:pt-72  "
+          className=" w-full md:w-1/2 flex justify-center  pt-7 "
           variants={slideInRight}
         >
-          <div className="relative w-[500px] h-[600px] mx-auto overflow-hidden">
+          <div className="relative w-[500px] h-[250px] mx-auto overflow-hidden">
             <img src={laptopMockup} alt="Animated Sites" className=" z-10 " />
-            <div
-              className="absolute top-[20px] left-[124px] w-[245px] md:h-[155px] h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide"
-              // style={{
-              //   WebkitMaskImage:
-              //     "linear-gradient(to bottom, black 95%, transparent 100%)", // optional fade mask
-              //   maskImage:
-              //     "linear-gradient(to bottom, black 95%, transparent 100%)",
-              // }}
-            >
+            <div className="absolute top-[20px] md:left-[124px]  left-[75px] md:w-[245px]  w-[145px] h-[75px] md:h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide">
               <img
                 src={laptopSite}
                 alt="Mobile site screenshot"
-                className="-pr-4 bg-slate-400
+                className="md:-pr-4  bg-slate-400
                  relative  object-cover"
                 style={{ display: "block" }}
               />
@@ -70,7 +62,7 @@ const ProjectsLaptop = () => {
 
           {/* RIGHT COLUMN */}
         </motion.div>
-        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-10">
+        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 md:px-10 scroll  md:pt-0">
           <motion.h2
             className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}
@@ -102,7 +94,7 @@ const ProjectsLaptop = () => {
             Let’s Work Together
           </motion.button>
         </div>
-        <motion.div
+        {/* <motion.div
           className="absolute text-[50vh] bottom-[-120px] whitespace-nowrap text-[#fdf4f418] w-max font-bold pointer-events-none z-0 pb-20"
           initial={{ x: 850, opacity: 0 }}
           whileInView={{
@@ -118,7 +110,7 @@ const ProjectsLaptop = () => {
               }, // delay start sliding after fade in
             },
           }}
-        ></motion.div>
+        ></motion.div> */}
       </motion.div>
 
       {/* Render modal when open */}

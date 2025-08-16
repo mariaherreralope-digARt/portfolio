@@ -4,34 +4,31 @@ import iPhoneMockUp from "/src/assets/iPhoneMockUp.png";
 import mobileSite from "/src/assets/mobileSite.png";
 import ContactModal from "./ContactFormModal";
 
-
-
 const ProjectsiPhone = () => {
+  const [contactFormOpen, setContactFormOpen] = useState(false);
 
-    const [contactFormOpen, setContactFormOpen] = useState(false);
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
 
-    const openContactForm = () => setContactFormOpen(true);
-    const closeContactForm = () => setContactFormOpen(false);
-    
   const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
     },
-  },
-};
+  };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
-};
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
+  };
 
-const slideInRight = {
-  hidden: { opacity: 0, x: 80 },
-  show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
-};
+  const slideInRight = {
+    hidden: { opacity: 0, x: 80 },
+    show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
+  };
   return (
     <section
       id="projects"
@@ -43,7 +40,7 @@ const slideInRight = {
 
       {/* Content Wrapper */}
       <motion.div
-        className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 relative"
+        className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 relative pt-20 md:pt-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
@@ -75,7 +72,7 @@ const slideInRight = {
           </motion.p>
 
           <motion.button
-          onClick={openContactForm}
+            onClick={openContactForm}
             className="mt-4 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-3xl transition-all duration-300 shadow hover:shadow-lg"
             variants={fadeUp}
           >
@@ -131,7 +128,7 @@ const slideInRight = {
         </motion.div>
       </motion.div>
 
-             {/* Render modal when open */}
+      {/* Render modal when open */}
       <ContactModal isOpen={contactFormOpen} onClose={closeContactForm} />
     </section>
   );

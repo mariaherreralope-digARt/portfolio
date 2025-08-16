@@ -31,7 +31,7 @@ const footerLinks = {
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-[#0c0c1d] to-[#111132] ">
-      <div className=" mx-auto w-full  sm:px-6 lg:px-8 pt-4 pb-8">
+      <div className=" mx-auto w-full  px-6 pt-4 pb-8">
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-12">
           {/* Brand Column */}
           <div className="px-4 lg:col-span-4">
@@ -81,8 +81,8 @@ const Footer = () => {
           </div>
 
           {/* Footer Navigation */}
-          <div className="lg:col-span-8 pt-7">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="lg:col-span-8 pt-7 sm:px-6 lg:px-8 pb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 px-4 gap-8">
               {Object.entries(footerLinks).map(([category, links]) => (
                 <div key={category}>
                   <h3 className="text-lg mb-4 uppercase text-emerald-500 font-bold">

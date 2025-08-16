@@ -44,7 +44,7 @@ const slideInRight = {
         whileInView="show"
       >
         {/* LEFT COLUMN */}
-        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-10">
+        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-10 pt-7 md:pt-0">
           <motion.h2
             className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}

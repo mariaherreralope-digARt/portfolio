@@ -5,37 +5,35 @@ import mobileSite from "/src/assets/mobileSite.png";
 import ContactModal from "./ContactFormModal";
 
 const ProjectsiPhone = () => {
+  const [contactFormOpen, setContactFormOpen] = useState(false);
 
-      const [contactFormOpen, setContactFormOpen] = useState(false);
+  const openContactForm = () => setContactFormOpen(true);
+  const closeContactForm = () => setContactFormOpen(false);
 
-    const openContactForm = () => setContactFormOpen(true);
-    const closeContactForm = () => setContactFormOpen(false);
-
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
     },
-  },
-};
+  };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
-};
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
+  };
 
-const slideInRight = {
-  hidden: { opacity: 0, x: 80 },
-  show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
-};
-
+  const slideInRight = {
+    hidden: { opacity: 0, x: 80 },
+    show: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
+  };
 
   return (
     <section
       id="projects"
-      className="relative w-full md:h-screen flex  bg-gradient-to-t from-[#0c0c1d] to-[#111132] px-6 md:px-16 overflow-hidden "
+      className="relative w-full md:h-screen flex bg-gradient-to-t from-[#0c0c1d] to-[#111132] px-6 md:px-16 overflow-hidden "
     >
       {/* Gradient Overlay (optional) */}
       {/* from-black/30 via-transparent to-black/40 */}
@@ -43,7 +41,7 @@ const slideInRight = {
 
       {/* Content Wrapper */}
       <motion.div
-        className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 relative"
+        className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 relative pt-20 md:pt-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"

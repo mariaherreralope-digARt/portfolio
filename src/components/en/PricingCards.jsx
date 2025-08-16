@@ -67,7 +67,8 @@ const pricingPlans = [
 
 const PricingCards = () => {
   return (
-    <div id="services"
+    <div
+      id="services"
       className=" mx-auto max-w-7xl
     pt-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0c0c1d] to-[#111132]"
     >
@@ -99,9 +100,9 @@ const PricingCards = () => {
               {plan.description}
             </p>
             <div className=" mt-4 rounded-lg bg-slate-50/40 p-3">
-              <p className="flex items-center text-xs font-semibold text-emerald-400">
+              <p className="flex items-center text-xs font-semibold text-emerald-400 ">
                 <span>{plan.currency}</span>
-                <span className="ml-3 text-lg text-slate-300">
+                <span className="ml-3 text-lg text-sm text-slate-300">
                   {plan.price}
                 </span>
                 <span className="ml-1.5">/ {plan.frequency}</span>

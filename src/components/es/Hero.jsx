@@ -38,15 +38,15 @@ const slideInRight = {
     >
  
       <motion.div
-        className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 relative"
+        className="max-w-7xl  w-full flex flex-col md:flex-row items-center justify-between z-10 relative"
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
       >
         {/* LEFT COLUMN */}
-        <div className="w-full md:w-1/2 text-white text-center md:text-left space-y-6 px-5">
+        <div className="w-full  md:w-1/2 text-white text-center md:text-left space-y-6 pt-7 md:pt-0 px-5">
           <motion.h2
-            className="text-lg text-emerald-400  uppercase font-extralight tracking-widest cursor-default"
+            className="text-lg text-emerald-400 uppercase font-extralight tracking-widest cursor-default"
             variants={fadeUp}
           >
             Maria Herrera
