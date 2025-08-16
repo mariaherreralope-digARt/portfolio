@@ -92,7 +92,7 @@ const ProjectsiPhone = () => {
                 repeat: Infinity,
                 repeatType: "mirror",
                 duration: 150,
-              }, // delay start sliding after fade in
+              }, 
             },
           }}
         ></motion.div>
@@ -109,12 +109,7 @@ const ProjectsiPhone = () => {
             />
             <div
               className="absolute top-[39px] left-[64px] w-[175px] md:h-[375px] h-[365px] overflow-y-scroll rounded-[22px] scrollbar-hide"
-              // style={{
-              //   WebkitMaskImage:
-              //     "linear-gradient(to bottom, black 95%, transparent 100%)", // optional fade mask
-              //   maskImage:
-              //     "linear-gradient(to bottom, black 95%, transparent 100%)",
-              // }}
+
             >
               <img
                 src={mobileSite}

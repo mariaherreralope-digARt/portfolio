@@ -49,6 +49,7 @@ const ProjectsLaptop = () => {
         >
           <div className="relative w-[500px] h-[250px] mx-auto overflow-hidden">
             <img src={laptopMockup} alt="Animated Sites" className=" z-10 " />
+            
             <div className="absolute top-[20px] md:left-[124px]  left-[75px] md:w-[245px]  w-[145px] h-[75px] md:h-[165px] overflow-y-scroll rounded-[5px] scrollbar-hide">
               <img
                 src={laptopSite}

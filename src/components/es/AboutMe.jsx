@@ -18,7 +18,10 @@ const fadeInUp = {
 
 const AboutSection = () => {
   return (
-    <section id="about" className=" md:h-screen flex flex-col justify-center items-center px-6 py-20 bg-gradient-to-t from-[#0c0c1d] to-[#111132] text-center ">
+    <section
+      id="about"
+      className=" md:h-screen flex flex-col justify-center items-center px-6 py-20 bg-gradient-to-t from-[#0c0c1d] to-[#111132] text-center "
+    >
       {/* Gradient Overlay (optional) */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 z-0 pointer-events-none" /> */}
       <motion.h1

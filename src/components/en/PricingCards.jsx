@@ -75,7 +75,7 @@ const PricingCards = () => {
       <h2 className="text-md font-extrabold text-slate-100 sm:text-xl sm:leading-tight sm:tracking-tight text-center">
         Flexible Website Packages — Built for Your Business, Your Way
       </h2>
-      <p className="mt-2  text-center text-sm text-slate-300">
+      <p className="mt-2  text-center text-sm pt-2 md:pt-0 text-slate-300">
         Whether you just need a simple one-page site or a fully managed online
         presence, choose the plan that matches your goals and budget. No hidden
         fees, no tech stress.
@@ -102,7 +102,7 @@ const PricingCards = () => {
             <div className=" mt-4 rounded-lg bg-slate-50/40 p-3">
               <p className="flex items-center text-xs font-semibold text-emerald-400 ">
                 <span>{plan.currency}</span>
-                <span className="ml-3 text-lg text-sm text-slate-300">
+                <span className="ml-3 mdtext-lg text-sm text-slate-300">
                   {plan.price}
                 </span>
                 <span className="ml-1.5">/ {plan.frequency}</span>
